@@ -1,0 +1,134 @@
+%
+% ee.tex
+% Gunther Abbot
+% 2019
+%
+
+\documentclass[letterpaper, 11pt]{report}
+
+% Packages
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage[hidelinks]{hyperref}
+\usepackage{marginnote} % margin notes
+\usepackage{fancyhdr} % fancy header
+\usepackage{tocloft}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{mathtools} % Equation comments
+\usepackage{soul}
+\usepackage{paralist}
+\usepackage{float}
+\usepackage{todonotes}
+%\usepackage{geometry}
+\usepackage{xcolor}         % Extended colors
+\usepackage{color}         % Color extended names
+\usepackage[siunitx]{circuitikz}
+\usepackage{apacite}
+%\usepackage{tcolorbox}
+%\tcbuselibrary{theorems}
+%\tcbuselibrary{breakable}
+%\tcbset{colback=white}
+
+\definecolor{boxcolor}{HTML}{efefef}
+
+\newcommand{\note}[1]{\intertext{#1}}
+\newcommand{\hll}[1]{\colorbox{yellow}{$\displaystyle #1$}} % Equation highlighting
+
+\pagestyle{fancy}
+%\renewcommand{\sectionmark}[1]{\markright{#1}}
+%\renewcommand*{\sectionmark}[1]{ \markright{\thesection\ ##1} }%
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{#1}{}}
+\fancyhf{}
+\rhead{\nouppercase{\rightmark}}
+\lhead{\nouppercase{\leftmark}}
+%\fancyhead[L]{}
+%\fancyhead[R]{\rightmark}
+\cfoot{\thepage}
+
+\renewcommand*{\thefootnote}{(\arabic{footnote})}
+
+%\newenvironment{mybox}[1]%
+%{%
+%	\addtocounter{subsection}{1}%
+%	\addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection}#1}%
+%	\begin{tcolorbox}[title=#1]%
+%	\abovedisplayskip=0pt%
+%	\belowdisplayskip=0pt%
+%}{%
+%	\end{tcolorbox}%
+%}%
+
+%\newtcolorbox{equationframe}[1]{ams align*, title=#1}
+
+%\newenvironment{name}[args]{begdef}{enddef}
+%\newenvironment{myboxy}[1]%
+%{%
+%	\addtocounter{subsection}{1}%
+%	\addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection} #1}%
+%	\begin{equationframe}{#1}%
+%%	\abovedisplayskip=0pt%
+%%	\belowdisplayskip=0pt%
+%}{%
+%	\end{equationframe}%
+%}
+
+\newcolumntype{L}{>{$}l<{$}} % math-mode version of "l" column type
+
+
+% \newtheorem{<name>}{<heading>}[<counter>]
+%\newtheorem{formula}{Formula}[section]
+%\newtcbtheorem{theorem}{Theorem}{ams align*}{thm}
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{5}
+
+%\renewcommand{\cftchapnumwidth}{6em}
+
+%% Document
+\begin{document}
+	
+%% Title Page
+\pagenumbering{roman}
+\include{frontmatter}
+
+\include{preface}
+
+\pagenumbering{arabic}
+%% Body
+\part{Signals \& Systems}
+%\include{sigsys}
+\include{ltis}
+\include{fourier}
+\include{filters}
+
+\part{Circuits \& Electronics}
+\include{opamps}
+\include{diodes}
+\include{mosfets}
+\include{bjts}
+
+
+
+\bibliographystyle{apacite}
+\bibliography{ee}
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+

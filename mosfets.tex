@@ -1,0 +1,41 @@
+\chapter{MOSFETs}
+\section{Recipie}
+Recipie for solving transistor circuits
+\begin{enumerate}
+	\item Solve DC bias points ($V_{GS}$, $V_{DS}$, $I_{DQ}$)
+	\item Calculate small signal parameters ($g_m$)
+	\item Draw small signal model
+	\item Solve for small signals
+	\item Add DC + AC (small signals) to get full signal
+\end{enumerate}
+\textbf{Note:} We cannot calculate large signal values from small signal parameters \cite{ulaby}.
+
+\section{Q-Point}
+If $V_{GS} < V_{TN}$, the transistor is in Cutoff. Otherwise:
+\begin{itemize}
+	\item If $V_{DS} \leq V_{GS}-V_{TN}$, it's in Triode.
+	\[I_{D}=k_n\left(V_{GS}-V_{TN}-\frac{V_{DS}}{2}\right)V_{DS}\]
+	\item If $V_{DS} \geq V_{GS}-V_{TN}$, it's in Saturation.
+	\[I_{D}=\frac{k_n}{2}\left(V_{GS}-V_{TN}\right)^2\]
+\end{itemize}
+
+\section{Transconductance}
+\begin{equation}
+g_m = k_n\left(V_{GS}-V_{TN}\right) = \sqrt{2k_n I_{D}} \label{eq:dis}
+\end{equation}
+Retrieved from \citeA{cad}.
+
+
+\section{Small Signal Limit}
+\[v_{gs}<0.2\left(V_{GS}-V_{TN}\right)\]
+Usually have to do a KVL from here to get $v_{in}$.
+
+
+\section{Common Source Small-Signal Gain}
+	With source degeneration ($R_S$),
+	\[A_v=\frac{-R_D||R_L \cdot g_m}{1+g_m R_S}\]
+	Without,
+	\[A_v=-R_D||R_L\cdot g_m\]
+
+\section{Common Drain Small-Signal Gain}
+	\[A_v=\frac{g_m\left(R_S||R_L\right)}{1+g_m\left(R_S||R_L\right)} \]

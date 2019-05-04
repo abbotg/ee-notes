@@ -1,0 +1,67 @@
+\chapter{Signals \& Systems}
+
+\section{Fourier Series}
+
+Cosine/Sine Representation
+\begin{align*}
+&f(t) = a_0 + \sum_{n=1}^{\infty}\left[a_n \cos(2\pi nf_0 t) + b_n \sin(2\pi nf_0 t)\right],\; f_0 = \frac{1}{T}\\
+&a_0 = \frac{1}{T}\int_{0}^{T}f(t)dt, \qquad a_n = \frac{2}{T}\int_{0}^{T}f(t)\cos(2\pi nf_0 t)dt,\\
+&b_n = \frac{2}{T}\int_{0}^{T} f(t)\sin(2\pi nf_0 t)dt\\
+\end{align*}
+Amplitude/Phase Representation
+\begin{align*}
+&f(t) = a_0 + \sum_{n=1}^{\infty}c_n \cos(2\pi nf_0 + \phi_n),\; f_0 = \frac{1}{T}\\
+&a_0 = \frac{1}{T}\int_{0}^{T}f(t)dt, \quad c_n = \sqrt{a_n^2 + b_n^2}\\
+&\phi_n = \begin{cases}
+-\arctan(b_n / a_n) & a_n > 0\\
+\pi -\arctan(b_n / a_n) & a_n < 0\\
+\end{cases}
+\end{align*}
+Exponential Representation
+\begin{gather*}
+f(t)=\sum_{n=-\infty}^{\infty}\mathbf{x}_n e^{jn\omega_0 t}\\
+\mathbf{x}_n=\left|\mathbf{x}_n\right|e^{j\phi_n}, \quad \mathbf{x}_{-n}=\mathbf{x}_n^*, \quad \phi_{-n}=-\phi_n, \quad \left|\mathbf{x}_n\right|=c_n/2, \quad x_0=c_0 \\
+\mathbf{x}_n=\frac{1}{T_0}\int_{0}^{T_0}x(t)e^{-jn\omega_0 t}dt
+\end{gather*}
+
+
+
+%\begin{mybox}{Fourier Series}
+%	Cosine/Sine Representation
+%	\begin{align*}
+%	&f(t) = a_0 + \sum_{n=1}^{\infty}\left[a_n \cos(2\pi nf_0 t) + b_n \sin(2\pi nf_0 t)\right],\; f_0 = \frac{1}{T}\\
+%	&a_0 = \frac{1}{T}\int_{0}^{T}f(t)dt, \qquad a_n = \frac{2}{T}\int_{0}^{T}f(t)\cos(2\pi nf_0 t)dt,\\
+%	&b_n = \frac{2}{T}\int_{0}^{T} f(t)\sin(2\pi nf_0 t)dt\\
+%	\end{align*}
+%	Amplitude/Phase Representation
+%	\begin{align*}
+%	&f(t) = a_0 + \sum_{n=1}^{\infty}c_n \cos(2\pi nf_0 + \phi_n),\; f_0 = \frac{1}{T}\\
+%	&a_0 = \frac{1}{T}\int_{0}^{T}f(t)dt, \quad c_n = \sqrt{a_n^2 + b_n^2}\\
+%	&\phi_n = \begin{cases}
+%	-\arctan(b_n / a_n) & a_n > 0\\
+%	\pi -\arctan(b_n / a_n) & a_n < 0\\
+%	\end{cases}
+%	\end{align*}
+%\end{mybox}
+
+\section{Fourier Transform}
+\begin{align*}
+F\left[x(t)\right] &= X(\omega) = \int_{-\infty}^{\infty}x(t)e^{-j\omega t}dt \\
+x(t) &= F^{-1}\left[X(\omega)\right] = \frac{1}{2\pi}\int_{-\infty}^{\infty}X(\omega)e^{-j\omega t}d\omega
+\end{align*}
+
+\section{Convolution}
+\[x(t) * h(t) = \int_{-\infty}^{\infty}x(\tau)h(t-\tau)d\tau\]
+
+%\begin{mybox}{Fourier Transform}
+%\begin{align*}
+%F\left[x(t)\right] &= X(\omega) = \int_{-\infty}^{\infty}x(t)e^{-j\omega t}dt \\
+%x(t) &= F^{-1}\left[X(\omega)\right] = \frac{1}{2\pi}\int_{-\infty}^{\infty}X(\omega)e^{-j\omega t}d\omega
+%\end{align*}
+%Hey there
+%\end{mybox}
+
+%\begin{mybox}{Convolution Integral}
+%\[x(t) * h(t) = \int_{-\infty}^{\infty}x(\tau)h(t-\tau)d\tau\]
+%Other stuff
+%\end{mybox}

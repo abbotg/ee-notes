@@ -1,0 +1,20 @@
+\chapter{Diodes}
+
+\section{Three Diode Models}
+\begin{enumerate}
+	\item Ideal model: no forward drop across the diode.
+	\item \SI{0.7}{\V} model: In a resistor-diode circuit,
+	\[I_D=\frac{V_S-V_D}{R}\]
+	Where $V_D$ is a constant \SI{0.7}{\V}.
+	\item Exponential model:
+	\[I_D = I_{sat}\left(e^{V_D/V_{therm}}-1\right)\]
+	In a resistor-diode circuit, set this equal to the KVL and solve for $V_D$:
+	\begin{align*}
+	I_D &= I_{sat}\left(e^{V_D/V_{therm}}-1\right)=\frac{V_S-V_D}{R} \\
+	V_D &= V_T \ln\left(\frac{I}{I_{sat}}\right)
+	\end{align*}
+		
+\end{enumerate}
+
+\section{Log-Amp}
+	\[V_{out}=-V_T \ln\left(\frac{V_{in}}{I_{sat}R}\right)\]
