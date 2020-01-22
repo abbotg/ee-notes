@@ -53,6 +53,14 @@ x(t) &= F^{-1}\left[X(\omega)\right] = \frac{1}{2\pi}\int_{-\infty}^{\infty}X(\o
 \section{Convolution}
 \[x(t) * h(t) = \int_{-\infty}^{\infty}x(\tau)h(t-\tau)d\tau\]
 
+\section{Discrete Time}
+Sampling concepts:
+\begin{itemize}
+\item $\delta T_s(t) = \sum_{-\infty}_^{\infty} \delta(t-nT_s)$
+\item $\delta T_s(f) = \frac{1}{T_s}\sum_{-\infty}^{\infty} \delta(f-nf_s)
+\end{itemize}
+
+
 %\begin{mybox}{Fourier Transform}
 %\begin{align*}
 %F\left[x(t)\right] &= X(\omega) = \int_{-\infty}^{\infty}x(t)e^{-j\omega t}dt \\
